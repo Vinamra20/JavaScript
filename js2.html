@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabetize String</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #result {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Alphabetize a String</h1>
+    <form id="alphabetizeForm">
+        <label for="inputString">Enter a string: </label>
+        <input type="text" id="inputString" required>
+        <button type="submit">Alphabetize</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("alphabetizeForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const inputString = document.getElementById("inputString").value;
+            const alphabetizedString = alphabetizeString(inputString);
+
+            document.getElementById("result").textContent = `Alphabetized String: ${alphabetizedString}`;
+        });
+
+        function alphabetizeString(str) {
+            const sortedStr = str.split('').sort().join('');
+            return sortedStr;
+        }
+    </script>
+</body>
+
+</html>
